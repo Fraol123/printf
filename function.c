@@ -68,3 +68,36 @@ int print_nan(char ch1, char ch2)
 		return (2);
 	}
 }
+/**
+ * print_num - writes a number to stdout
+ * @list: va_list we want to increment through
+ * Return: the amount of individual numbers and signs we printed
+ */
+int print_num(va_list list)
+{
+	int num = va_arg(list, int);
+	unsigned int n;
+	int count = 0;
+	int x = 1;
+
+	if (num < 0)
+	{
+		n = num * (-1);
+		_putchar('-');
+		count++;
+	}
+	else
+	{
+		n = num;
+	}
+	while ((n / x) > 9)
+		x *= 10;
+	while (x >= 1)
+	{
+		_putchar(((n / x) % 10) + '0');
+		x /= 10;
+		count++;
+	}
+	return (count);
+
+}
