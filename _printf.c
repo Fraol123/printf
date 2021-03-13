@@ -1,11 +1,10 @@
 #include <unistd.h>
 /**
- *_printf - writes a character to stdout
- *@c:charcter to print
- *Return:1 - on success, -1 on error
+ *_printf - prints formatted output to stdout
  *
+ *@format:specifies the format of the character
+ *
+ *Return:integer
  */
-int _printf(char c)
+int _printf(char *format, ...)
 {
-	return(write(1, &c, 1));
-}
