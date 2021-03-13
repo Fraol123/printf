@@ -36,3 +36,22 @@ int print_string(va_list list)
 	}
 	return (i);
 }
+/**
+ *print_percent - handles a % format
+ *
+ *@list
+ *
+ *Return:1
+ */
+int print_percent(__attribute__((unused)) va_list list)
+{
+	_putchar('%');
+	return (1);
+}
+/**
+ *print_d - prints an integer of format 'd'
+ *@list:list to increment
+ *Return:1 since we print a single int
+ */
+int print_d(va_list list)
+{
