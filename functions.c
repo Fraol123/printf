@@ -49,9 +49,38 @@ int print_percent(__attribute__((unused)) va_list list)
 	return (1);
 }
 /**
- *print_d - prints an integer of format 'd'
+ *print_num - prints an integer of format 'd'
  *@list:list to increment
- *Return:1 since we print a single int
+ *Return:count of characters printed
  */
-int print_d(va_list list)
+int print_num(va_list list)
 {
+	int num;
+	int x = 1;
+
+	num = va_arg(list, int);
+	unsigned int n;
+	int count = 0;/*to be returned*/
+
+	if (num < 0)
+	{
+		n = -num;
+		_putchar('-');
+		count++;
+	}
+	else
+	{
+		n = num;
+	}
+	while ((n / x) > 9)
+	{
+		x *= 10;
+	}
+	while (x >= 1)
+	{
+		_putchar(((n / x) % 10) + '0');
+		x /= 10;
+		count++;
+	}
+	return (count);
+}
