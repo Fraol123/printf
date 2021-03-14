@@ -138,7 +138,8 @@ int print_binary(va_list list)
  */
 int print_octal(va_list list)
 {
-	int num, i, len;
+	unsigned int num;
+	int i, len;
 	char *str;
 
 	if (num == 0)
@@ -165,4 +166,81 @@ int print_octal(va_list list)
 		_putchar(str[j] + '0');
 	}
 	return (len);
+}
+int print_Hex(va_list list)
+{
+	unsigned int num;
+	int i, j, temp;
+	char *str;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	len = base_len(num, 8);
+	str = malloc((sizeof(char) * len) + 1);
+	if (str == NULL)
+	{
+		return (-1);
+	}
+	while (num > 0)
+	{
+		temp = 0;
+		temp = num % 16;
+		if (temp < 10)
+		{
+			str[i] = temp + 48;
+			i++;
+		}
+		else
+		{
+			str[i] = temp + 55;
+			i++;
+		}
+		n = n / 16;
+	}
+	for (j = (i - 1); j >= 0; j--)
+	{
+		_putchar(str[i]);
+	}
+	return (len);
+}
+int print_hex(va_list list)
+{
+	unsigned int num;
+	int i, j, temp;
+	char *str;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	len = base_len(num, 8);
+	str = malloc((sizeof(char) * len) + 1);
+	if (str == NULL)
+	{
+		return (-1);
+	}
+	while (num > 0)
+	{
+		temp = 0;
+		temp = num % 16;
+		if (temp < 10)
+		{
+			str[i] = temp + 48;
+			i++;
+		}
+		else
+		{
+			str[i] = temp + 87;
+			i++;
+		}
+		n = n / 16;
+	}
+	for (j = (i - 1); j >= 0; j--)
+	{
+		_putchar(str[i]);
+	}
 }
