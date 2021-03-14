@@ -16,11 +16,11 @@ struct ops
 	int (*func)(va_list);
 };
 typedef struct ops op_f;
-int printf(const char *format, ...);
+int _printf(const char *format, ...);
 int _putchar(char c);
-int print_char(va_list va);
-int print_d(va_list va);
-int print_string(va_list va);
+int print_char(va_list list);
+int print_num(va_list list);
+int print_string(va_list list);
 int (*get_func(char ch))(va_list);
 
 #endif /*HOLBERTON_H*/
