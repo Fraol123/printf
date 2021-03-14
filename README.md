@@ -2,5 +2,5 @@
 ======================
 Printf
 -------------------------
-creating our own Printf file with 
--Denis Wanjeri
+a project between Fraol and Dennis
+A collaboration
