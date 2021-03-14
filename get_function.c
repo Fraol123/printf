@@ -15,10 +15,12 @@ int (*get_func(char ch))(va_list)
 		{'i', print_num},
 		{'\0', NULL}
 	};
+	 int i;
 
-	while (print_op[i].op)
+	 i = 0;
+	while (print_op[i].operation)
 	{
-		if (ch == print_op[i].op)
+		if (ch == print_op[i].operation)
 		{
 			return (print_op[i].func);
 		}

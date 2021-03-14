@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <unistd.h>
+
 /**
  *print_char - prints a character to stdout
  *
@@ -9,8 +9,10 @@
 int print_char(va_list list)
 {
 	char c;
+
 	c = va_arg(list, int);
 	write(1, &c, 1);
+
 	return (1);
 }
 /**
@@ -37,7 +39,7 @@ int print_string(va_list list)
 	return (i);
 }
 /**
- * print_non - writes chars after a % if they
+ * print_nan - writes chars after a % if they
  * don't match anything in the struct
  * @ch1: the first char passed (always %)
  * @ch2: the char after the %
@@ -60,29 +62,17 @@ int print_nan(char ch1, char ch2)
 }
 
 /**
- *_putchar- writes to buffer
- * @c: The character to print
- * Return: 1 because 1 char was printed
- */
-int _putchar(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
-
-/**
  *print_num - prints an integer of format 'd'
  *@list:list to increment
  *Return:count of characters printed
  */
 int print_num(va_list list)
 {
-	int num;
+	int num = va_arg(list, int);
+	unsigned int n;
+	int count = 0;
 	int x = 1;
 
-	num = va_arg(list, int);
-	unsigned int n;
-	int count = 0;/*to be returned*/
 
 	if (num < 0)
 	{

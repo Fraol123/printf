@@ -18,10 +18,8 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-	if (format == NULL)
-		return (-1);
-	va_start(list, format);
 	i = count = 0;
+
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
