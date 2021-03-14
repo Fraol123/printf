@@ -165,6 +165,7 @@ int print_octal(va_list list)
 	{
 		_putchar(str[j] + '0');
 	}
+	free(str);
 	return (len);
 }
 int print_Hex(va_list list)
@@ -204,6 +205,7 @@ int print_Hex(va_list list)
 	{
 		_putchar(str[i]);
 	}
+	free(str);
 	return (len);
 }
 int print_hex(va_list list)
@@ -243,4 +245,5 @@ int print_hex(va_list list)
 	{
 		_putchar(str[i]);
 	}
+	free(str);
 }
