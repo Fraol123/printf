@@ -13,7 +13,7 @@
 struct ops
 {
 	char *op;
-	int (*fun)(va_list);
+	int (*func)(va_list);
 };
 typedef struct ops op_f;
 int printf(const char *format, ...);
