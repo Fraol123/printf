@@ -73,7 +73,6 @@ int print_num(va_list list)
 	int count = 0;
 	int x = 1;
 
-
 	if (num < 0)
 	{
 		n = -num;

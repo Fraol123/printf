@@ -1,13 +1,14 @@
 #include "holberton.h"
 
 /**
- * get_func - contains a struct to scan chars to
- * choose the right function to pass back
- * @ch: character to check
- * Return: the pointer to the appropriate function or NULL if nothing matches
+ *get_func - selects the right function corresponding to format specified
+ *@ch:input format
+ *Return:pointer to function that corresponds with specified format
+ *
  */
 int (*get_func(char ch))(va_list)
 {
+	int i = 0;
 	ops_f print_op[] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -15,9 +16,6 @@ int (*get_func(char ch))(va_list)
 		{'i', print_num},
 		{'\0', NULL}
 	};
-	 int i;
-
-	 i = 0;
 	while (print_op[i].operation)
 	{
 		if (ch == print_op[i].operation)

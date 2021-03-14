@@ -1,0 +1,62 @@
+PRINTF(3)   GNU                                                                      2019-10-10                                                >
+NAME
+       _printf - formatted output conversion
+SYNOPSIS
+       #include "holberton.h"
+
+        int _printf(const char *format, ...);
+
+        int _putchar(char c);
+
+        int (*get_func(char ch))(va_list);
+
+        int print_char(va_list list);
+
+        int print_string(va_list list);
+
+        int print_nan(char ch1, char ch2);
+
+        int print_num(va_list list);
+
+DESCRIPTION
+
+The  functions  in the _printf() family produce output according to a format as described below.  The functions _printf()
+write output to stdout, the standard output stream;
+
+These functions write the output under the control of a format string that specifies how subsequent  arguments  (or  arguments
+accessed via the variable-length argument facilities of stdarg(3)) are converted for output.
+
+RETURN VALUE
+Upon  successful  return,  these  functions  return  the  number of characters printed (excluding the null byte used to end output to
+strings).
+
+If an output error is encoutered, a negative value is returned
+The percent sign represents the format string (%), and is followed by a format modifier
+
+Format Modifiers
+
+Supported format modifiers:
+
+d,i
+The int argument is converted to signed decimal notation. writes an integer to stdout
+
+c
+The charchter gets promoted to its ASCII value and written to stdout.
+
+s
+The const char * argument is expected to be an array of character type (pointer to string). characters from the array are written up to (but no>
+
+%
+A '%' is written while no argument is converted. The complete conversion specification is %%.
+
+other format modifiers not supported by _printf will be printed out as they are. For example, if '%r' is passed to _printf, "%r' will be printe>
+
+BUGS
+No bugs till now
+
+SEE ALSO
+printf(3)
+
+AUTHORS
+Fraol Tolera, Dennis Wanjeri
+
