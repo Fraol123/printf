@@ -37,17 +37,39 @@ int print_string(va_list list)
 	return (i);
 }
 /**
- *print_percent - handles a % format
- *
- *@list
- *
- *Return:1
+ * print_non - writes chars after a % if they
+ * don't match anything in the struct
+ * @ch1: the first char passed (always %)
+ * @ch2: the char after the %
+ * Return: 1 if ch2 is a % and 2 is ch2 is anything else
  */
-int print_percent(__attribute__((unused)) va_list list)
+
+int print_nan(char ch1, char ch2)
 {
-	_putchar('%');
+	if (ch2 == '%')
+	{
+		write(1, &ch2, 1);
+		return (1);
+	}
+	else
+	{
+		write(1, &ch1, 1);
+		write(1, &ch2, 1);
+		return (2);
+	}
+}
+
+/**
+ *_putchar- writes to buffer
+ * @c: The character to print
+ * Return: 1 because 1 char was printed
+ */
+int _putchar(char c)
+{
+	write(1, &c, 1);
 	return (1);
 }
+
 /**
  *print_num - prints an integer of format 'd'
  *@list:list to increment
