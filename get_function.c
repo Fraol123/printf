@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <string.h>
+
 /**
  *get_func - selects the right function corresponding to format specified
  *@ch:input format
@@ -16,7 +16,6 @@ int (*get_func(char ch))(va_list)
 		{'i', print_num},
 		{'\0', NULL}
 	};
-
 	while (print_op[i].operation)
 	{
 		if (ch == print_op[i].operation)
@@ -24,6 +23,7 @@ int (*get_func(char ch))(va_list)
 			return (print_op[i].func);
 		}
 		i++;
+
 	}
 	return (NULL);
 }
