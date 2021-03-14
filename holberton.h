@@ -10,17 +10,16 @@
  *
  *@func:function to call
  */
-struct ops
+typedef struct ops
 {
-	char *op;
+	char operation;
 	int (*func)(va_list);
-};
-typedef struct ops op_f;
+} ops_f;
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_char(va_list list);
 int print_num(va_list list);
 int print_string(va_list list);
 int (*get_func(char ch))(va_list);
-
+int print_nan(char ch1, char ch2);
 #endif /*HOLBERTON_H*/

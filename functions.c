@@ -9,6 +9,7 @@
 int print_char(va_list list)
 {
 	char c;
+
 	c = va_arg(list, int);
 	write(1, &c, 1);
 	return (1);
@@ -37,16 +38,25 @@ int print_string(va_list list)
 	return (i);
 }
 /**
- *print_percent - handles a % format
- *
- *@list
- *
- *Return:1
+ *print_nan - writes chars after % if they dont match
+ *anything in the struct
+ *@ch1:first char passed(always %)
+ *@ch2:second char passed after %
+ *Return:1 if ch1 is % and ch2 is sth else
  */
-int print_percent(__attribute__((unused)) va_list list)
+int print_nan(char ch1, char ch2)
 {
-	_putchar('%');
-	return (1);
+	if (ch2 == '%')
+	{
+		write(1, &ch2, 1);
+		return (1);
+	}
+	else
+	{
+		write(1, &ch1, 1);
+		write(1, &ch2, 1);
+		return (2);
+	}
 }
 /**
  *print_num - prints an integer of format 'd'
@@ -55,12 +65,11 @@ int print_percent(__attribute__((unused)) va_list list)
  */
 int print_num(va_list list)
 {
-	int num;
+	int num, count = 0;
+	unsigned int n;
 	int x = 1;
 
 	num = va_arg(list, int);
-	unsigned int n;
-	int count = 0;/*to be returned*/
 
 	if (num < 0)
 	{

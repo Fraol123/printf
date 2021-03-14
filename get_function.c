@@ -2,14 +2,14 @@
 #include <string.h>
 /**
  *get_func - selects the right function corresponding to format specified
- *@s:input format
+ *@ch:input format
  *Return:pointer to function that corresponds with specified format
  *
  */
-int (*get_func(char *ch))(va_list)
+int (*get_func(char ch))(va_list)
 {
 	int i = 0;
-	op_f print_op[] = {
+	ops_f print_op[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_num},
@@ -17,9 +17,9 @@ int (*get_func(char *ch))(va_list)
 		{'\0', NULL}
 	};
 
-	while (print_op[i].op)
+	while (print_op[i].operation)
 	{
-		if (ch == print_op[i].op)
+		if (ch == print_op[i].operation)
 		{
 			return (print_op[i].func);
 		}
