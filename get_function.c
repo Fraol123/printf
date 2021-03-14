@@ -14,6 +14,7 @@ int (*get_func(char ch))(va_list)
 		{'s', print_string},
 		{'d', print_num},
 		{'i', print_num},
+		{'b', print_binary},
 		{'\0', NULL}
 	};
 	while (print_op[i].operation)

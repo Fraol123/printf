@@ -95,3 +95,39 @@ int print_num(va_list list)
 	}
 	return (count);
 }
+/**
+ *print_binary - prints an unsigned int in binary format
+ *
+ *@list:list to increment
+ *Return:no. of characters printed
+ */
+int print_binary(va_list list)
+{
+	unsigned int num;
+	int i, len;
+	char *str;
+
+	num = var_arg(list, unsigned int);
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	if (num < 0)
+		return (-1);
+	len = base_len(num, 2);
+	str = malloc((sizeof(char) * len) + 1);
+	i = 0;
+	while (num > 0)
+	{
+		str[i] = num % 2;
+		num /= 2;
+		i++;
+	}
+	for (j = (i - 1); j >= 0; j--)
+	{
+		_putchar(str[i] + '0');
+	}
+	free(str);
+	return (len);
+}
