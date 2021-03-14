@@ -6,5 +6,24 @@
  *Return:pointer to function that corresponds with specified format
  *
  */
-int (*get_function(char *s))(va_list list)
+int (*get_func(char *s))(va_list)
 {
+	int i = 0;
+	op_f print_op[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'d', print_num},
+		{'i', print_num},
+		{'\0', NULL}
+	};
+
+	while (print_op[i].op)
+	{
+		if (ch == print_op[i].op)
+		{
+			return (print_op[i].func);
+		}
+		i++;
+	}
+	return (NULL);
+}
