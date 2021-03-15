@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  *rev_string -reverses a string
  *@s:string to reverse
@@ -51,12 +52,13 @@ unsigned int base_len(unsigned int num, int base)
 char *hex_conv(int num)
 {
 	char *str;
-	int i, j, len;
+	int i, len;
 
-	len = base_len(num);
+	i = 0;
+	len = base_len(num, 16);
 	str = malloc((sizeof(char) * len) + 1);
 	if (str == NULL)
-		return (-1);
+		return (NULL);
 	if (num == 0)
 	{
 		str[i] = 0;

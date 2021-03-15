@@ -1,13 +1,14 @@
 #include "holberton.h"
 /**
  *print_binary - prints an unsigned int in binary format
+ *
  *@list:list to increment
  *Return:no. of characters printed
  */
 int print_binary(va_list list)
 {
 
-	unsigned int num = 0;
+	unsigned int num;
 	int i, j, len;
 	char *str;
 
@@ -42,18 +43,17 @@ int print_binary(va_list list)
  */
 int print_octal(va_list list)
 {
-
+	unsigned int num;
 	int i, j, len;
-
-	unsigned int num = 1;
 	char *str;
+
+	num = va_arg(list, unsigned int);
 
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	num = va_arg(list, unsigned int);
 	len = base_len(num, 8);
 	str = malloc((sizeof(char) * len) + 1);
 	if (str == NULL)
@@ -81,29 +81,25 @@ int print_octal(va_list list)
  */
 int print_Hex(va_list list)
 {
-
-	unsigned int num = 0;
-	int i, j, n, len, temp;
+	unsigned int num;
+	int i, j, temp, len;
 	char *str;
 
+	num = va_arg(list, unsigned int);
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
-	num = va_arg(list, unsigned int);
-
-	len = base_len(num, 8);
+	len = base_len(num, 16);
 	str = malloc((sizeof(char) * len) + 1);
 	if (str == NULL)
 	{
 		return (-1);
 	}
-
+	i = 0;
 	while (num > 0)
 	{
-		temp = 0;
 		temp = num % 16;
 		if (temp < 10)
 		{
@@ -115,17 +111,15 @@ int print_Hex(va_list list)
 			str[i] = temp + 55;
 			i++;
 		}
-		n = n / 16;
+		num = num / 16;
 	}
 	for (j = (i - 1); j >= 0; j--)
 	{
-		_putchar(str[i]);
+		_putchar(str[j]);
 	}
 	free(str);
 	return (len);
-
 }
-
 /**
  *print_hex - prints unsigned int in hex lower format
  *@list:list to increment
@@ -133,29 +127,25 @@ int print_Hex(va_list list)
  */
 int print_hex(va_list list)
 {
-
-	unsigned int num = 0;
-
-	int i, j, n, len, temp;
-
+	unsigned int num;
+	int i, j, temp, len;
 	char *str;
 
+	num = va_arg(list, unsigned int);
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
-	num = va_arg(list, unsigned int);
-	len = base_len(num, 8);
+	len = base_len(num, 16);
 	str = malloc((sizeof(char) * len) + 1);
 	if (str == NULL)
 	{
 		return (-1);
 	}
+	i = 0;
 	while (num > 0)
 	{
-		temp = 0;
 		temp = num % 16;
 		if (temp < 10)
 		{
@@ -167,44 +157,14 @@ int print_hex(va_list list)
 			str[i] = temp + 87;
 			i++;
 		}
-		n = n / 16;
+		num = num / 16;
 	}
 	for (j = (i - 1); j >= 0; j--)
 	{
-		_putchar(str[i]);
+		_putchar(str[j]);
 	}
 	free(str);
-
 	return (len);
-}
-/**
- *print_S - handles custom conversion S which for instance
- *               - prints '\n' as \x and hex equivalent of n
- *@list:list to increment
- *Return:number  of characters printed
- */
-int print_S(va_list list)
-{
-	char *hex;
-	char *s = va_arg(list, char *s);
-	int i = 0, j = 0;
 
-	if (s == NULL)
-		return (-1);
-	for (i = 0; s[i]; i++)
-	{
-		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
-		{
-			_putchar('\\');
-			_putchar('x');
-			hex = hex_conv(atoi(s[i]));
-			for (j = 0; s[j] != '\0'; j++)
-			{
-				_putchar(s[j]);
-			}
-			return (3 + j);
-		}
-		_putchar(s[i]);
-	}
 }
 
