@@ -1,5 +1,33 @@
 #include <stdio.h>
 /**
+ *rev_string -reverses a string
+ *@s:string to reverse
+ *Return:pointer to reversed string
+ */
+char *rev_string(char *s)
+{
+	int i, max, half;
+	char first, last;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	max = i - 1;
+	half = max / 2;
+
+	while (half >= 0)
+	{
+		first = s[max - half];
+		last = s[half];
+		s[half] = first;
+		s[max - half] = last;
+		half--;
+	}
+	return (s);
+}
+/**
  *base_len - finds the length of a number
  *
  *@base:base to be calculated in
@@ -20,7 +48,7 @@ unsigned int base_len(unsigned int num, int base)
  *@num:number to convert
  *Return:pointer to converted string
  */
-int hex_conv(int num)
+char *hex_conv(int num)
 {
 	char *str;
 	int i, j, len;
@@ -47,3 +75,4 @@ int hex_conv(int num)
 	rev_string(str);
 	return (str);
 }
+
