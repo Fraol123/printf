@@ -43,9 +43,10 @@ int print_binary(va_list list)
  */
 int print_octal(va_list list)
 {
-	unsigned int num = 0;
-
 	int i, j, len;
+
+	unsigned int num = 1;
+
 	char *str;
 
 	if (num == 0)
