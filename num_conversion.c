@@ -6,8 +6,8 @@
  */
 int print_binary(va_list list)
 {
-<<<<<<< HEAD
-		unsigned int num = 0;
+
+	unsigned int num = 0;
 	int i, j, len;
 	char *str;
 
@@ -176,6 +176,7 @@ int print_hex(va_list list)
 	free(str);
 
 	return (len);
+}
 /**
  *print_S - handles custom conversion S which for instance
  *               - prints '\n' as \x and hex equivalent of n
