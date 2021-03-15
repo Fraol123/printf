@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 /**
- * struct ops - a structure containing a char to compare with format modifiers
+ * struct ops - a structure containing a char to compare with formatb modifiers
  * and then choose the right function when it matches
  * @operation: the char we want to compare to
  * @func: the address of the function we want to return if a char matches
@@ -28,6 +28,10 @@ int print_binary(va_list list);
 int print_octal(va_list list);
 int print_hex(va_list list);
 int print_Hex(va_list list);
+int print_s(va_list list);
+int *rev_string(char *s);
+char *hex_conv(int num);
+
 
 
 #endif /*HOLBERTON_H*/
