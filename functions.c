@@ -95,3 +95,27 @@ int print_num(va_list list)
 	}
 	return (count);
 }
+/**
+ *print_unsigned - prints unsigned no.
+ *@list:list to increment
+ *Return:count of no. printed
+ */
+int print_unsigned(va_list list)
+{
+	unsigned int num;
+	int len = 0;
+	int d = 1;
+
+	num = va_arg(list, unsigned int);
+	for (; num / d > 9; )
+	{
+		d = d * 10;
+	}
+	while (d > 0)
+	{
+		len += _putchar('0' + (num / d));
+		num = num % d;
+		d = d / 10;
+	}
+	return (len);
+}

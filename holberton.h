@@ -32,7 +32,7 @@ int print_s(va_list list);
 int *rev_string(char *s);
 char *hex_conv(int num);
 int print_p(va_list list);
-
+int print_unsigned(va_list list);
 
 
 #endif /*HOLBERTON_H*/
