@@ -49,6 +49,23 @@ The const char * argument is expected to be an array of character type (pointer 
 %
 A '%' is written while no argument is converted. The complete conversion specification is %%.
 
+u
+prints an unsigned int in binary format
+
+o
+prints numbers in octal
+
+X
+prints unsigned int in Hex upper format
+
+x
+prints unsigned int in hex lower format
+
+s
+handles custom conversion S which for instance
+ *prints '\n' as \x and hex equivalent of n
+
+
 other format modifiers not supported by _printf will be printed out as they are. For example, if '%r' is passed to _printf, "%r' will be printe>
 
 BUGS
