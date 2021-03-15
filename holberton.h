@@ -23,8 +23,11 @@ int print_char(va_list list);
 int print_string(va_list list);
 int print_nan(char ch1, char ch2);
 int print_num(va_list list);
-
-
+unsigned int base_len(unsigned int num, int base);
+int print_binary(va_list list);
+int print_octal(va_list list);
+int print_hex(va_list list);
+int print_Hex(va_list list);
 
 
 #endif /*HOLBERTON_H*/
