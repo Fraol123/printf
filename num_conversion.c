@@ -43,7 +43,7 @@ int print_binary(va_list list)
 int print_octal(va_list list)
 {
 	unsigned int num;
-	int i, len;
+	int i, j, len;
 	char *str;
 
 	if (num == 0)
@@ -125,7 +125,7 @@ int print_Hex(va_list list)
 int print_hex(va_list list)
 {
 	unsigned int num;
-	int i, j, temp;
+	int i, j, temp, len;
 	char *str;
 
 	if (num == 0)

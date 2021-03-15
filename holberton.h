@@ -11,7 +11,7 @@
  * @func: the address of the function we want to return if a char matches
  */
 typedef struct ops
-{b
+{
 	char operation;
 	int (*func)(va_list);
 } ops_f;
