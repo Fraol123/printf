@@ -20,8 +20,8 @@ int (*get_func(char ch))(va_list)
 		{'X', print_Hex},
 		{'x', print_hex},
 		/**{'S', print_S},
-		 *{'p', print_p},
-		 */
+		   {'p', print_p},*/
+
 		 {'\0', NULL}
 	};
 	while (print_op[i].operation)
