@@ -8,6 +8,7 @@
 int print_binary(va_list list)
 {
 	unsigned int num = 0;
+
 	int i, j, len;
 	char *str;
 
@@ -43,6 +44,7 @@ int print_binary(va_list list)
 int print_octal(va_list list)
 {
 	unsigned int num = 0;
+
 	int i, j, len;
 	char *str;
 
@@ -80,7 +82,7 @@ int print_octal(va_list list)
 int print_Hex(va_list list)
 {
 	unsigned int num = 0;
-	int i, j, n,len, temp;
+	int i, j, n, len, temp;
 	char *str;
 
 	if (num == 0)
@@ -95,7 +97,7 @@ int print_Hex(va_list list)
 	{
 		return (-1);
 	}
-       
+
 	while (num > 0)
 	{
 		temp = 0;
@@ -129,6 +131,7 @@ int print_Hex(va_list list)
 int print_hex(va_list list)
 {
 	unsigned int num = 0;
+
 	int i, j, n, len, temp;
 	char *str;
 
@@ -167,3 +170,4 @@ int print_hex(va_list list)
 	free(str);
 	return (len);
 }
+
