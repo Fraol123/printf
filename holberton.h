@@ -31,5 +31,6 @@ int print_Hex(va_list list);
 int print_S(va_list list);
 char *rev_string(char *s);
 char *hex_conv(int num);
+int print_p(va_list list);
 
 #endif /*HOLBERTON_H*/

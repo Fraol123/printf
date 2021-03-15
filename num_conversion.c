@@ -46,12 +46,13 @@ int print_octal(va_list list)
 	int i, j, len;
 	char *str;
 
+	num = va_arg(list, unsigned int);
+
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	num = va_arg(list, unsigned int);
 	len = base_len(num, 8);
 	str = malloc((sizeof(char) * len) + 1);
 	if (str == NULL)
@@ -80,23 +81,24 @@ int print_octal(va_list list)
 int print_Hex(va_list list)
 {
 	unsigned int num;
-	int i, j, temp;
+	int i, j, temp, len;
 	char *str;
 
+	num = va_arg(list, unsigned int);
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	len = base_len(num, 8);
+	len = base_len(num, 16);
 	str = malloc((sizeof(char) * len) + 1);
 	if (str == NULL)
 	{
 		return (-1);
 	}
+	i = 0;
 	while (num > 0)
 	{
-		temp = 0;
 		temp = num % 16;
 		if (temp < 10)
 		{
@@ -108,11 +110,11 @@ int print_Hex(va_list list)
 			str[i] = temp + 55;
 			i++;
 		}
-		n = n / 16;
+		num = num / 16;
 	}
 	for (j = (i - 1); j >= 0; j--)
 	{
-		_putchar(str[i]);
+		_putchar(str[j]);
 	}
 	free(str);
 	return (len);
@@ -128,20 +130,21 @@ int print_hex(va_list list)
 	int i, j, temp, len;
 	char *str;
 
+	num = va_arg(list, unsigned int);
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	len = base_len(num, 8);
+	len = base_len(num, 16);
 	str = malloc((sizeof(char) * len) + 1);
 	if (str == NULL)
 	{
 		return (-1);
 	}
+	i = 0;
 	while (num > 0)
 	{
-		temp = 0;
 		temp = num % 16;
 		if (temp < 10)
 		{
@@ -153,13 +156,14 @@ int print_hex(va_list list)
 			str[i] = temp + 87;
 			i++;
 		}
-		n = n / 16;
+		num = num / 16;
 	}
 	for (j = (i - 1); j >= 0; j--)
 	{
-		_putchar(str[i]);
+		_putchar(str[j]);
 	}
 	free(str);
+	return (len);
 }
 /**
  *print_S - handles custom conversion S which for instance
@@ -167,6 +171,7 @@ int print_hex(va_list list)
  *@list:list to increment
  *Return:no. of characters printed
  */
+/**
 int print_S(va_list list)
 {
 	char *hex;
@@ -191,3 +196,4 @@ int print_S(va_list list)
 		_putchar(s[i]);
 	}
 }
+*/
