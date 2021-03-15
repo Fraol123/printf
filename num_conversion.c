@@ -161,3 +161,22 @@ int print_hex(va_list list)
 	}
 	free(str);
 }
+/**
+ *print_S - handles custom conversion S which for instance
+ *prints '\n' as \x and hex equivalent of n
+ *@list:list to increment
+ *Return:no. of characters printed
+ */
+int print_S(va_list list)
+{
+	char *s = va_arg(list, char *s);
+	int i = 0;
+
+	if (s == NULL)
+		return (-1);
+	for (i = 0; s[i]; i++)
+	{
+		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
