@@ -169,8 +169,9 @@ int print_hex(va_list list)
  */
 int print_S(va_list list)
 {
+	char *hex;
 	char *s = va_arg(list, char *s);
-	int i = 0;
+	int i = 0, j = 0;
 
 	if (s == NULL)
 		return (-1);
@@ -180,3 +181,13 @@ int print_S(va_list list)
 		{
 			_putchar('\\');
 			_putchar('x');
+			hex = hex_conv(atoi(s[i]));
+			for (j = 0; s[j] != '\0'; j++)
+			{
+				_putchar(s[j]);
+			}
+			return (3 + j);
+		}
+		_putchar(s[i]);
+	}
+}

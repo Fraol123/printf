@@ -28,5 +28,8 @@ unsigned int base_len(unsigned int num, int base);
 int print_octal(va_list list);
 int print_hex(va_list list);
 int print_Hex(va_list list);
+int print_S(va_list list);
+char *rev_string(char *s);
+char *hex_conv(int num);
 
 #endif /*HOLBERTON_H*/
