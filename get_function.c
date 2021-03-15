@@ -19,8 +19,10 @@ int (*get_func(char ch))(va_list)
 		{'o', print_octal},
 		{'X', print_Hex},
 		{'x', print_hex},
-		{'S', print_S},
-		{'\0', NULL}
+		/**{'S', print_S},
+		 *{'p', print_p},
+		 */
+		 {'\0', NULL}
 	};
 	while (print_op[i].operation)
 	{
