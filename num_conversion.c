@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  *print_binary - prints an unsigned int in binary format
  *
@@ -167,33 +169,42 @@ int print_hex(va_list list)
 }
 /**
  *print_S - handles custom conversion S which for instance
- *prints '\n' as \x and hex equivalent of n
+ *         -prints '\n' as \x and hex equivalent of n
  *@list:list to increment
  *Return:no. of characters printed
  */
-
+/**
 int print_S(va_list list)
 {
-	char *hex;
-	char *s = va_arg(list, char *s);
+	char *hex = "\\x";
+
+	char *s;
 	int i = 0, j = 0;
+	
+	s = va_arg(list, char *);
 	if (s == NULL)
 		return (-1);
+
 	for (i = 0; s[i]; i++)
 	{
 		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
-			hex = hex_conv(atoi(s[i]));
+			hex = hex_conv(atoi(s));
 			for (j = 0; s[j] != '\0'; j++)
 			{
 				_putchar(s[j]);
 			}
-			return (3 + j);
+			_putchar(s[i]);
+
 		}
-		_putchar(s[i]);
+
+
 	}
-}
+	return (3 + j);
+	
+}*/
+
 
 
