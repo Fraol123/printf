@@ -28,12 +28,15 @@ int print_binary(va_list list);
 int print_octal(va_list list);
 int print_hex(va_list list);
 int print_Hex(va_list list);
-int print_s(va_list list);
+int print_S(va_list list);
 int *rev_string(char *s);
 char *hex_conv(int num);
 int print_p(va_list list);
 int print_unsigned(va_list list);
-unsigned int convert_R(va_list args, unsigned  char *s)
+int print_rot13(va_list list);
+
+
+
 
 
 
