@@ -1,10 +1,5 @@
+#include  "holberton.h"
 #include <stdio.h>
-#include <stdlib.h>
-/**
- *rev_string -reverses a string
- *@s:string to reverse
- *Return:pointer to reversed string
- */
 char *rev_string(char *s)
 {
 	int i, max, half;
@@ -26,14 +21,13 @@ char *rev_string(char *s)
 		s[max - half] = last;
 		half--;
 	}
-	return (s);
-}
+}	
 /**
  *base_len - finds length of number
  *@base: to be calculated
  *@num: checked
- *Return:length
  */
+
 unsigned int base_len(unsigned int num, int base)
 {
 	unsigned int i;
@@ -78,4 +72,13 @@ char *hex_conv(int num)
 	}
 	rev_string(str);
 	return (str);
+}
+
+int main(void)
+{
+	int i = 20;
+	char *str = hex_conv(i);
+
+	printf("%s\n", str);
+	return (0);
 }

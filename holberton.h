@@ -3,7 +3,28 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+/**
+ * struct buffer - buffer structure for our implimentation of printf
+ * @buf: buffer to write characters
+ * @tmpbuf: tmp buffer to write to before putting in buffer
+ * @format: the string passed to our printf
+ * @ap: the variadic address point
+ * @bp: the current point in the buffer
+ * @tp: the current point in the tmp buffer
+ * @fp: the current point in the format
+ * @printed: the number of chars printed from _write
+ */
+typedef struct buffer
+{
+	char *buf;
+	char *tmpbuf;
+	const char *format;
+	va_list ap;
+	int bp;
+	int tp;
+	int fp;
+	unsigned int printed;
+} buffer;
 /**
  * struct ops - a structure containing a char to compare with formatb modifiers
  * and then choose the right function when it matches
@@ -34,8 +55,6 @@ char *hex_conv(int num);
 int print_p(va_list list);
 int print_unsigned(va_list list);
 int print_rot13(va_list list);
-
-
 
 
 
