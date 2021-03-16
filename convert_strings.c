@@ -1,32 +1,37 @@
 #include "holberton.h"
+#include <stdarg.h>
+
 /**
- *convert_R- converts a string to root 13
- *@args: A va_list pointing to the string to be converted
- *Return: s
+ *print_rot13 - prints a string in rot13
+ *@list:list to increment
+ *Return:count of characters printed
  */
-unsigned int convert_R(va_list args,   char *s)
+int print_rot13(va_list list)
 {
-
+	char *str;
+	int c = 0;
 	int i, j;
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	char src[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
-	char dest[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
-
-
-	s = va_arg(args, char *); 
-	if (s == NULL)
-		return(-1);
-
-	for (i = 0; *(s + i); i++)
+	str = va_arg(list, char *);
+	if (!str)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
 	{
-		for (j = 0; j < 52; j++)
+		for (j = 0; input[j]; j++)
 		{
-			if (src[j] == *(s + i))
+			if (input[j] == str[i])
 			{
-				*(s + i) = dest[j];
+				_putchar(output[j]);
+				c++;
 				break;
 			}
 		}
+		if (!input[j])
+		{
+			c += _putchar(str[i]);
+		}
 	}
-	return (dest[j]);
+	return (c);
 }

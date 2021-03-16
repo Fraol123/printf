@@ -32,8 +32,8 @@ char *rev_string(char *s)
  *base_len - finds length of number
  *@base: to be calculated
  *@num: checked
+ *Return:length
  */
-                                                                                                                               
 unsigned int base_len(unsigned int num, int base)
 {
 	unsigned int i;

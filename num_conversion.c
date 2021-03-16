@@ -175,25 +175,31 @@ int print_hex(va_list list)
 int print_S(va_list list)
 {
 	char *hex;
-	char *s = va_arg(list, char *s);
-	int i = 0, j = 0;
+	char *s = va_arg(list, char *);
+	unsigned int i = 0, j;
+	int c = 0;
+
 	if (s == NULL)
-		return (-1);
+		s = "(null)";
 	for (i = 0; s[i]; i++)
 	{
 		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
-			hex = hex_conv(atoi(s[i]));
-			for (j = 0; s[j] != '\0'; j++)
+			c += 2;
+			hex = hex_conv(s[i]);
+			for (j = 0; hex[j]; j++)
 			{
-				_putchar(s[j]);
+				_putchar(hex[j]);
+				c++;
 			}
-			return (3 + j);
 		}
-		_putchar(s[i]);
+		else
+		{
+			_putchar(s[i]);
+			c++;
+		}
 	}
+	return (c);
 }
-
-
