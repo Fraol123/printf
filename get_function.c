@@ -19,7 +19,11 @@ int (*get_func(char ch))(va_list)
 		{'o', print_octal},
 		{'X', print_Hex},
 		{'x', print_hex},
-		 {'\0', NULL}
+		{'S', print_S},
+		{'p', print_p},
+		{'R', print_rot13},
+		{'\0', NULL}
+
 	};
 	while (print_op[i].operation)
 	{

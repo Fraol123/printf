@@ -32,8 +32,8 @@ char *rev_string(char *s)
  *base_len - finds length of number
  *@base: to be calculated
  *@num: checked
+ *Return:length
  */
-                                                                                                                               
 unsigned int base_len(unsigned int num, int base)
 {
 	unsigned int i;
@@ -57,25 +57,25 @@ char *hex_conv(int num)
 	i = 0;
 	len = base_len(num, 16);
 	str = malloc((sizeof(char) * len) + 1);
-	if (str == NULL)
-		return (NULL);
 	if (num == 0)
 	{
 		str[i] = 0;
 	}
+	i = 0;
 	while (num > 0)
 	{
-		if (num % 16 < 10)
+		if ((num % 16) < 10)
 		{
 			str[i] = (num % 16) + 48;
+			i++;
 		}
 		else
 		{
 			str[i] = (num % 16) + 55;
+			i++;
 		}
+		num /= 16;
 	}
 	rev_string(str);
 	return (str);
 }
-
-
