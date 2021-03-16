@@ -19,11 +19,13 @@ int (*get_func(char ch))(va_list)
 		{'o', print_octal},
 		{'X', print_Hex},
 		{'x', print_hex},
-		/**{'S', print_S},
-		 *{'p', print_p},
-		 */
-		 {'\0', NULL}
+		/*{'s', print_S},*/
+		{'p', print_p},
+		{'r', print_rot13},
+ 		{'\0', NULL}
+	
 	};
+
 	while (print_op[i].operation)
 	{
 		if (ch == print_op[i].operation)
