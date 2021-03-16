@@ -191,6 +191,7 @@ int print_S(va_list list)
 		{
 			_putchar('\\');
 			_putchar('x');
+			_putchar('0');
 			c += 2;
 			hex = hex_conv(s[i]);
 			for (j = 0; hex[j]; j++)
