@@ -1,14 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "holberton.h"
 
-int main(void)
+int main()
 {
-	unsigned int i = 5;
-	int d = -8;
-	int z = 8;
+	int value=2567;
 
-	printf("i: %u", i);
-	printf("d: %u", d);
-	printf("z: %u", z);
-	return (0);
+	_printf("%d\n",value);
+	_printf("%o\n",value);
+	_printf("%x\n",value);
+	_printf("%X\n",value);
+
+	return 0;
 }
