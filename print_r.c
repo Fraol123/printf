@@ -17,13 +17,15 @@ int print_r(va_list list)
 			_putchar(s[i]);
 			c++;
 		}
-		return (c);
 	}
-	rev_string(s);
-	for (i = 0; s[i]; i++)
+	else
 	{
-		_putchar(s[i]);
-		c++;
+		rev_string(s);
+		for (i = 0; s[i]; i++)
+		{
+			_putchar(s[i]);
+			c++;
+		}
 	}
 	return (c);
 }
