@@ -181,7 +181,7 @@ int print_S(va_list list)
 	char *hex;
 	char *s = va_arg(list, char *);
 	unsigned int i = 0, j;
-	int c = 0;
+	int c = 0, len;
 
 	if (s == NULL)
 		s = "(null)";
@@ -191,7 +191,12 @@ int print_S(va_list list)
 		{
 			_putchar('\\');
 			_putchar('x');
-			_putchar('0');
+			len = base_len(s[i], 16);
+			if (len != 2)
+			{
+				_putchar('0');
+				c++;
+			}
 			c += 2;
 			hex = hex_conv(s[i]);
 			for (j = 0; hex[j]; j++)
