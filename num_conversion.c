@@ -171,13 +171,12 @@ int print_hex(va_list list)
  *@list:list to increment
  *Return:no. of characters printed
  */
-/**
+
 int print_S(va_list list)
 {
 	char *hex;
 	char *s = va_arg(list, char *s);
 	int i = 0, j = 0;
-
 	if (s == NULL)
 		return (-1);
 	for (i = 0; s[i]; i++)
@@ -196,4 +195,5 @@ int print_S(va_list list)
 		_putchar(s[i]);
 	}
 }
-*/
+
+

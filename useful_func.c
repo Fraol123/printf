@@ -29,11 +29,11 @@ char *rev_string(char *s)
 	return (s);
 }
 /**
- *base_len - finds the length of a number
- *
- *@base:base to be calculated in
- *Return:length
+ *base_len - finds length of number
+ *@base: to be calculated
+ *@num: checked
  */
+                                                                                                                               
 unsigned int base_len(unsigned int num, int base)
 {
 	unsigned int i;
@@ -78,4 +78,5 @@ char *hex_conv(int num)
 	/*rev_string(str);*/
 	return (str);
 }
+
 
