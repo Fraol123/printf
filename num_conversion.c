@@ -207,4 +207,3 @@ int print_S(va_list list)
 	}
 	return (c);
 }
-
