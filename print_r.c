@@ -10,22 +10,17 @@ int print_r(va_list list)
 	int i, c;
 
 	if (s == NULL)
+		s = ")llun(";
+	i = 0;
+	while (s[i])
 	{
-		s = "(null)";
-		for (i = 0; s[i]; i++)
-		{
-			_putchar(s[i]);
-			c++;
-		}
+		i++;
 	}
-	else
+	i--;
+	for (; i >= 0; i--)
 	{
-		rev_string(s);
-		for (i = 0; s[i]; i++)
-		{
-			_putchar(s[i]);
-			c++;
-		}
+		_putchar(s[i]);
+		c++;
 	}
 	return (c);
 }

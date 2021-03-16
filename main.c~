@@ -1,0 +1,8 @@
+#include "holberton.h"
+
+int main(void)
+{
+	char *str = "qwerty";
+	_printf("%r\n", str);
+	return (0);
+}
