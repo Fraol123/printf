@@ -55,7 +55,9 @@ char *hex_conv(int num);
 int print_p(va_list list);
 int print_unsigned(va_list list);
 int print_rot13(va_list list);
-
+void _write(buffer *b_r, char c);
+void _write_str(buffer *b_r, char *s);
+void _write_tmpbuf(buffer *b_r);
 
 
 
