@@ -15,10 +15,10 @@ int (*get_func(char ch))(va_list)
 		{'d', print_num},
 		{'i', print_num},
 		{'b', print_binary},
-		{'u', print_num},
+		{'u', print_unsigned},
 		{'o', print_octal},
 		{'X', print_Hex},
-		{'x', print_hex},
+		{'x', print_hex},=
 		{'S', print_S},
 		{'p', print_p},
 		{'R', print_rot13},

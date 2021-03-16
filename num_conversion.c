@@ -9,6 +9,7 @@
  */
 int print_binary(va_list list)
 {
+
 	unsigned int num;
 	int i, j, len;
 	char *str;
@@ -166,6 +167,7 @@ int print_hex(va_list list)
 	}
 	free(str);
 	return (len);
+
 }
 /**
  *print_S - handles custom conversion S which for instance
