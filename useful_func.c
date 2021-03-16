@@ -57,8 +57,6 @@ char *hex_conv(int num)
 	i = 0;
 	len = base_len(num, 16);
 	str = malloc((sizeof(char) * len) + 1);
-	if (str == NULL)
-		return (NULL);
 	if (num == 0)
 	{
 		str[i] = 0;
@@ -66,7 +64,7 @@ char *hex_conv(int num)
 	i = 0;
 	while (num > 0)
 	{
-		if (num % 16 < 10)
+		if ((num % 16) < 10)
 		{
 			str[i] = (num % 16) + 48;
 		}
@@ -74,9 +72,8 @@ char *hex_conv(int num)
 		{
 			str[i] = (num % 16) + 55;
 		}
+		i++;
 	}
-	/*rev_string(str);*/
+	rev_string(str);
 	return (str);
 }
-
-

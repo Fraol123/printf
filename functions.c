@@ -95,3 +95,15 @@ int print_num(va_list list)
 	}
 	return (count);
 }
+int print_address(va_list list, char *s)
+{
+	char *str;
+	unsigned long int add = va_arg(list, unsigned long int);
+	int c = 0;
+
+	/*if (!add)am unsure of how to handle it*/
+	str = hex_conv(add);
+	c += _putchar("0x");
+	c += _putchar(str);
+	return (c);
+}
