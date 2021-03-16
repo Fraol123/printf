@@ -7,7 +7,7 @@
 int print_p(va_list list)
 {
 	char *hex;
-	unsigned long int add =(unsigned long int)va_arg(list, void *);
+	unsigned long int add = (unsigned long int)va_arg(list, void *);
 	int c = 0, i;
 
 	if (add == 0)
