@@ -1,5 +1,0 @@
-/**
- *print_rot13 - prints a string in rot13 format
- *@list:list to increment
- *Return:no. of characters printed
- */
