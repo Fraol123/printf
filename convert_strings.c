@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <string.h>
 /**
  *convert_R- converts a string to root 13
  *@args: A va_list pointing to the string to be converted
