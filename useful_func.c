@@ -67,12 +67,14 @@ char *hex_conv(int num)
 		if ((num % 16) < 10)
 		{
 			str[i] = (num % 16) + 48;
+			i++;
 		}
 		else
 		{
 			str[i] = (num % 16) + 55;
+			i++;
 		}
-		i++;
+		num /= 16;
 	}
 	rev_string(str);
 	return (str);
