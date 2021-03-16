@@ -166,29 +166,34 @@ int print_hex(va_list list)
 	return (len);
 }
 /**
- *convert_R- converts a string to root 13
- *@args: A va_list pointing to the string to be converted
- *Return: s
+ *print_S - handles custom conversion S which for instance
+ *prints '\n' as \x and hex equivalent of n
+ *@list:list to increment
+ *Return:no. of characters printed
  */
-unsigned int convert_R(va_list args, unsigned  char *s)
+
+int print_S(va_list list)
 {
-
-	int i, j;
-
-	char src[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
-	char dest[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
-
-
-	for (i = 0; *(s + i); i++)
+	char *hex;
+	char *s = va_arg(list, char *s);
+	int i = 0, j = 0;
+	if (s == NULL)
+		return (-1);
+	for (i = 0; s[i]; i++)
 	{
-		for (j = 0; j < 52; j++)
+		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
 		{
-			if (src[j] == *(s + i))
+			_putchar('\\');
+			_putchar('x');
+			hex = hex_conv(atoi(s[i]));
+			for (j = 0; s[j] != '\0'; j++)
 			{
-				*(s + i) = dest[j];
-				break;
+				_putchar(s[j]);
 			}
+			return (3 + j);
 		}
+		_putchar(s[i]);
 	}
-	return (s);
 }
+
+
