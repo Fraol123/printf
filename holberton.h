@@ -33,6 +33,7 @@ int *rev_string(char *s);
 char *hex_conv(int num);
 int print_p(va_list list);
 int print_unsigned(va_list list);
+unsigned int convert_R(va_list args, unsigned  char *s)
 
 
 
