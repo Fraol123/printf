@@ -58,7 +58,7 @@ int print_rot13(va_list list);
 void _write(buffer *b_r, char c);
 void _write_str(buffer *b_r, char *s);
 void _write_tmpbuf(buffer *b_r);
-
+int print_r(va_list list);
 
 
 #endif /*HOLBERTON_H*/
