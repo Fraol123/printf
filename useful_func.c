@@ -63,6 +63,7 @@ char *hex_conv(int num)
 	{
 		str[i] = 0;
 	}
+	i = 0;
 	while (num > 0)
 	{
 		if (num % 16 < 10)
@@ -74,7 +75,7 @@ char *hex_conv(int num)
 			str[i] = (num % 16) + 55;
 		}
 	}
-	rev_string(str);
+	/*rev_string(str);*/
 	return (str);
 }
 
