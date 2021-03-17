@@ -1,0 +1,11 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+int main(void)
+{
+	void *addr;
+	_printf("%p\n", addr);
+	printf("%p\n", addr);
+	return (0);
+}

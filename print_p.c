@@ -8,7 +8,7 @@ int print_p(va_list list)
 {
 	char *hex;
 	unsigned long int add = (unsigned long int)va_arg(list, void *);
-	int c = 0, i;
+	int c = 0, i, temp, len;
 
 	if (add == 0)
 	{
@@ -19,7 +19,25 @@ int print_p(va_list list)
 	_putchar('0');
 	_putchar('x');
 	c = 2;
-	hex = hex_conv(add);
+	i = 0;
+	len = base_len(add, 16);
+	hex = malloc((sizeof(char) *len) + 1);
+	while (add > 0)
+	{
+		temp = add % 16;
+		if (temp > 9)
+		{
+			hex[i] = temp + 87;
+			i++;
+		}
+		else
+		{
+			hex[i] = temp + 48;
+			i++;
+		}
+		add /= 16;
+	}
+	rev_string(hex);
 	for (i = 0; hex[i]; i++)
 	{
 		_putchar(hex[i]);
