@@ -23,6 +23,7 @@ int (*get_func(char ch))(va_list)
 		{'p', print_p},
 		{'R', print_rot13},
 		{'\0', NULL}
+
 	};
 	while (print_op[i].operation)
 	{
