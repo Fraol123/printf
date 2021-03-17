@@ -7,13 +7,17 @@
 int print_p(va_list list)
 {
 	char *hex;
+	char *s = "(nil)";
 	unsigned long int add = (unsigned long int)va_arg(list, void *);
 	int c = 0, i, temp, len;
 
 	if (add == 0)
 	{
-		_putchar('n');
-		c = 1;
+		for (i = 0; s[i]; i++)
+		{
+			_putchar(s[i]);
+			c++;
+		}
 		return (c);
 	}
 	_putchar('0');
@@ -22,6 +26,14 @@ int print_p(va_list list)
 	i = 0;
 	len = base_len(add, 16);
 	hex = malloc((sizeof(char) *len) + 1);
+	if (!hex)
+	{
+		for (i = 0; s[i]; i++)
+		{
+			_putchar(s[i]);
+		}
+		return (5);
+	}
 	while (add > 0)
 	{
 		temp = add % 16;
