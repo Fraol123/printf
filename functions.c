@@ -4,16 +4,26 @@
  *print_char - prints a character to stdout
  *
  *@list:list to increment
+ *@handler:handler struct
  *Return:1 since printed only one character
  */
-int print_char(va_list list)
+int print_char(va_list list, han_s *handler)
 {
 	char c;
+	char pad = ' ';
+	unsigned int pad_count = 1;
+	unsigned int count;
 
-	c = va_arg(list, int);
-	write(1, &c, 1);
-
-	return (1);
+	c = va_arg(list, char);
+	if (handler->minus)
+	{
+		count += _putchar(c);
+	}
+	for (; pad_count++ < handler->width; )
+		count += _putchar(pad);
+	if (!handler->minus)
+		count += _putchar(c);
+	return (count);
 }
 /**
  *print_string - prints a string to stdout,1 char at a time
@@ -68,16 +78,28 @@ int print_nan(char ch1, char ch2)
  */
 int print_num(va_list list)
 {
-	int num = va_arg(list, int);
+	long num;
 	unsigned int n;
 	int count = 0;
 	int x = 1;
 
+	if (handler->l_mod)
+	{
+		num = va_arg(list, long);
+	}
+	else if (handler->h_mod)
+	{
+		num = (short int)va_arg(list, int);
+	}
 	if (num < 0)
 	{
 		n = -num;
 		_putchar('-');
 		count++;
+	}
+	if (handler->plus && num > 0)
+	{
+		_putchar('+');
 	}
 	else
 	{

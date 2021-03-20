@@ -26,6 +26,30 @@ typedef struct buffer
 	unsigned int printed;
 } buffer;
 /**
+ *struct handlers - handlers struct
+ *@plus:'+' flag
+ *@space:' ' flag
+ *@hash:'#' flag
+ *@zero:'0' flag
+ *@minus:'-' handler
+ *@width:width handler
+ *@precision:precision handler
+ *@h_mod:h modifier handler
+ *@l_mod:l modifier handler
+ */
+typedef struct handlers
+{
+	unsigned int plus;
+	unsigned int space;
+	unsigned int hash;
+	unsigned int zero;
+	unsigned int minus;
+	unsigned int width;
+	unsigned int precision;
+	unsigned int h_mod;
+	unsigned int l_mod;
+} han_s;
+/**
  * struct ops - a structure containing a char to compare with formatb modifiers
  * and then choose the right function when it matches
  * @operation: the char we want to compare to
